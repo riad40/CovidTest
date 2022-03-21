@@ -10,3 +10,16 @@
     background-image: url(../img/Merged\ bar-7.svg);
     background-size: cover;
 }
+.lang{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 0px 10px 0px 10px;
+    border: solid 2px #1A519E;
+    border-radius: 20px;
+}
+.plang{
+    margin-top: 11px;
+    margin-right: 5px;
+    color: #1A519E;
+}
