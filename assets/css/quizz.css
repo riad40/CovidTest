@@ -1,0 +1,27 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+.navbar-container{
+  background-image: url('../img/navbar.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.navbar{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  margin:0 40px;
+}
+.buttons a{
+  text-decoration: none;
+  color:black;
+  font-size: 18px;
+}
+.buttons a:nth-child(odd){
+  color:#1a519e;
+}
+.buttons a{
+  margin:20px;
+}
