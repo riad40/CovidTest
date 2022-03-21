@@ -23,3 +23,21 @@
     margin-right: 5px;
     color: #1A519E;
 }
+.info{
+    background-color: #F4CF1B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+}
+.info-header{
+    font-size: 17px;
+    font-weight: bold;
+}
+.info-text{
+    width: 100%;
+    max-width: 546px;
+    text-align: center;
+    font-size: 15px;
+    color: #1A519E;  
+}
