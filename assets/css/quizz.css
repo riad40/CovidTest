@@ -35,7 +35,37 @@
 
 .qs{
   font-size: 30px;
+  width: 900px;
+  margin: auto;
   display:flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+}
+
+.qs p{
+  text-align: center;
+  margin: 20px 0 100px 0;
+}
+.qs form{
+  margin-left:40px;
+}
+#oui{
+  margin-bottom:20px;
+}
+.info{
+    background-color: #F4CF1B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+}
+.info-header{
+    font-size: 17px;
+    font-weight: bold;
+}
+.info-text{
+    width: 100%;
+    max-width: 546px;
+    text-align: center;
+    font-size: 15px;
+    color: #1A519E;
 }
