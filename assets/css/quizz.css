@@ -12,7 +12,7 @@
   display:flex;
   align-items: center;
   justify-content: space-between;
-  margin:0 40px;
+  margin:0 80px;
 }
 .buttons a{
   text-decoration: none;
@@ -24,4 +24,15 @@
 }
 .buttons a{
   margin:20px;
+}
+
+.progress{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+.qs{
+  font-size: 30px;
 }
