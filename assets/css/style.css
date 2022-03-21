@@ -1,0 +1,12 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.logo{
+    width: 30;
+    aspect-ratio: auto;
+}
+.navbar{
+    background-image: url(../img/Merged\ bar-7.svg);
+    background-size: cover;
+}
