@@ -37,15 +37,16 @@
 
 .qs{
   font-size: 30px;
-  width: 900px;
-  margin: auto;
   display:flex;
   flex-direction: column;
   margin-bottom:60px;
-  padding:45px 25px;
-  border: 1px solid lightgrey;
 }
-
+.quizz{
+  border: 1px solid lightgrey;
+  width: 1050px;
+  margin: auto;
+  padding:60px 60px;
+}
 .qs p{
   text-align: center;
   margin: 20px 0 125px 0;
@@ -53,7 +54,11 @@
 .qs form{
   margin-left:40px;
 }
-.qs form button{
+.btns{
+  width: 900px;
+  margin: auto;
+}
+.btns button{
   font-size: 20px;
   background: #1078ad;
   color:white;

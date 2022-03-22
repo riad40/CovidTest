@@ -21,221 +21,172 @@
     <div class="progress">
       <img width="450px" src="./assets/img/progress.png" alt="progress">
     </div>
-    <!-- IDEA: question 1 -->
-    <div id ="active" class="qs q1">
-      <p>Avez-vous eu de la fièvre depuis 10 jours?</p>
-      <form>
-        <input type="radio" id="oui" name="fav_language" value="one">
-        <label for="html">Oui</label><br>
-        <input type="radio" id="non" name="fav_language" value="two">
-        <label for="css">Non</label><br>
-        <div class="btns">
-          <button type="button" name="button">Question précédente</button>
-          <button type="button" name="button">Question suivante</button>
+    <div class="quizz">
+      <div class="questions">
+        <!-- IDEA: question 1 -->
+        <div id ="inactive" class="qs q1">
+          <p>Avez-vous eu de la fièvre depuis 10 jours?</p>
+          <form>
+            <input type="radio" id="oui" name="fav_language" value="one">
+            <label for="html">Oui</label><br>
+            <input type="radio" id="non" name="fav_language" value="two">
+            <label for="css">Non</label><br>
+          </form>
         </div>
-      </form>
+        <!-- IDEA: question 2 -->
+        <div id ="inactive" class="qs q2">
+          <p>Quelle est votre température corporelle ?</p>
+          <form>
+            <div class="inp">
+              <input type="number" name="" value="">
+              <label>Degrée</label>
+            </div>
+          </form>
+        </div>
+        <!-- IDEA: question 3 -->
+        <div id ="inactive" class="qs q1">
+          <p>Ces derniers jours, avez-vous une toux ou une augmentation de votre toux habituelle ?</p>
+          <form>
+            <input type="radio" id="oui" name="fav_language" value="one">
+            <label for="html">Oui</label><br>
+            <input type="radio" id="non" name="fav_language" value="two">
+            <label for="css">Non</label><br>
+          </form>
+        </div>
+        <!-- IDEA: question 4 -->
+        <div id ="inactive" class="qs q1">
+          <p>Avez-vous eu des courbatures inhabituelles au cours des derniers jours ?</p>
+          <form>
+            <input type="radio" id="oui" name="fav_language" value="one">
+            <label for="html">Oui</label><br>
+            <input type="radio" id="non" name="fav_language" value="two">
+            <label for="css">Non</label><br>
+          </form>
+        </div>
+        <!-- IDEA: question 5 -->
+        <div id ="inactive" class="qs q1">
+          <p>Ces derniers jours, avez-vous un mal de gorge ?</p>
+          <form>
+            <input type="radio" id="oui" name="fav_language" value="one">
+            <label for="html">Oui</label><br>
+            <input type="radio" id="non" name="fav_language" value="two">
+            <label for="css">Non</label><br>
+          </form>
+        </div>
+        <!-- IDEA: question 6 -->
+        <div id ="inactive" class="qs q1">
+          <p>Ces dernières 24 heures, avez-vous de la diarrhée ? Avec au moins 3 selles molles.</p>
+          <form>
+            <input type="radio" id="oui" name="fav_language" value="one">
+            <label for="html">Oui</label><br>
+            <input type="radio" id="non" name="fav_language" value="two">
+            <label for="css">Non</label><br>
+          </form>
+        </div>
+        <!-- IDEA: question 7 -->
+        <div id ="inactive" class="qs q1">
+          <p>Ces derniers jours, avez-vous un mal de gorge ?</p>
+          <form>
+            <input type="radio" id="oui" name="fav_language" value="one">
+            <label for="html">Oui</label><br>
+            <input type="radio" id="non" name="fav_language" value="two">
+            <label for="css">Non</label><br>
+          </form>
+        </div>
+        <!-- IDEA: question 8 -->
+        <div id ="inactive" class="qs q1">
+          <p>Ces derniers jours, avez-vous une fatigue inhabituelle qui vous a obligé à vous reposer plus de la moitié de la journée ?</p>
+          <form>
+            <input type="radio" id="oui" name="fav_language" value="one">
+            <label for="html">Oui</label><br>
+            <input type="radio" id="non" name="fav_language" value="two">
+            <label for="css">Non</label><br>
+          </form>
+        </div>
+        <!-- IDEA: question 9 -->
+        <div id ="inactive" class="qs q1">
+          <p>Avez-vous des difficultés importantes pour vous alimenter ou boire depuis plus de 24h ?</p>
+          <form>
+            <input type="radio" id="oui" name="fav_language" value="one">
+            <label for="html">Oui</label><br>
+            <input type="radio" id="non" name="fav_language" value="two">
+            <label for="css">Non</label><br>
+          </form>
+        </div>
+        <!-- IDEA: question 10 -->
+        <div id ="inactive" class="qs q1">
+          <p>Dans les dernières 24 heures, avez-vous noté un manque de souffle inhabituel lorsque vous parlez ou faites un petit effort ?</p>
+          <form>
+            <input type="radio" id="oui" name="fav_language" value="one">
+            <label for="html">Oui</label><br>
+            <input type="radio" id="non" name="fav_language" value="two">
+            <label for="css">Non</label><br>
+          </form>
+        </div>
+        <!-- IDEA: question 11 -->
+        <div id ="inactive" class="qs q11">
+          <p>Quel est votre âge ? Ceci, afin de calculer un facteur de risque spécifique.</p>
+          <form>
+            <div class="input-group w-75 mx-auto">
+              <input type="number" class="form-control" placeholder="15-110">
+              <div class="input-group-append">
+                <span class="input-group-text">ans</span>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- IDEA: question 12 -->
+        <div id ="inactive" class="qs q11">
+          <p>Quel est votre âge ? Ceci, afin de calculer un facteur de risque spécifique.</p>
+          <form>
+            <div class="input-group w-75 mx-auto">
+              <input type="number" class="form-control" placeholder="20-250">
+              <div class="input-group-append">
+                <span class="input-group-text">kg</span>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- IDEA: question 13 -->
+        <div id ="inactive" class="qs q11">
+          <p>Quelle est votre taille ? Afin de calculer l’indice de masse corporelle qui est un facteur influençant le risque de complications de l’infection.</p>
+          <form>
+            <div class="input-group w-75 mx-auto">
+              <input type="number" class="form-control" placeholder="80-250">
+              <div class="input-group-append">
+                <span class="input-group-text">cm</span>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- IDEA: question 14 -->
+        <div id ="inactive" class="qs q1">
+          <p>Avez-vous de l’hypertension artérielle mal équilibrée ? Ou avez-vous une maladie cardiaque ou vasculaire ? Ou prenez-vous un traitement à visée cardiologique ?</p>
+          <form>
+            <input type="radio" id="oui" name="fav_language" value="one">
+            <label for="html">Oui</label><br>
+            <input type="radio" id="non" name="fav_language" value="two">
+            <label for="css">Non</label><br>
+          </form>
+        </div>
+        <!-- IDEA: question 15 -->
+        <div id ="active" class="qs q1">
+          <p>Êtes-vous diabétique ?</p>
+          <form>
+            <input type="radio" id="oui" name="fav_language" value="one">
+            <label for="html">Oui</label><br>
+            <input type="radio" id="non" name="fav_language" value="two">
+            <label for="css">Non</label><br>
+          </form>
+        </div>
+      </div>
+      <div class="btns">
+        <button class="prev" type="button" name="button">Question précédente</button>
+        <button class="next" type="button" name="button">Question suivante</button>
+      </div>
     </div>
-    <!-- IDEA: question 2 -->
-    <div id ="inactive" class="qs q2">
-      <p>Quelle est votre température corporelle ?</p>
-      <form>
-        <div class="inp">
-          <input type="number" name="" value="">
-          <label>Degrée</label>
-        </div>
-        <div class="btns">
-          <button type="button" name="button">Question précédente</button>
-          <button type="button" name="button">Question suivante</button>
-        </div>
-      </form>
-    </div>
-    <!-- IDEA: question 3 -->
-    <div id ="inactive" class="qs q1">
-      <p>Ces derniers jours, avez-vous une toux ou une augmentation de votre toux habituelle ?</p>
-      <form>
-        <input type="radio" id="oui" name="fav_language" value="one">
-        <label for="html">Oui</label><br>
-        <input type="radio" id="non" name="fav_language" value="two">
-        <label for="css">Non</label><br>
-        <div class="btns">
-          <button type="button" name="button">Question précédente</button>
-          <button type="button" name="button">Question suivante</button>
-        </div>
-      </form>
-    </div>
-    <!-- IDEA: question 4 -->
-    <div id ="inactive" class="qs q1">
-      <p>Avez-vous eu des courbatures inhabituelles au cours des derniers jours ?</p>
-      <form>
-        <input type="radio" id="oui" name="fav_language" value="one">
-        <label for="html">Oui</label><br>
-        <input type="radio" id="non" name="fav_language" value="two">
-        <label for="css">Non</label><br>
-        <div class="btns">
-          <button type="button" name="button">Question précédente</button>
-          <button type="button" name="button">Question suivante</button>
-        </div>
-      </form>
-    </div>
-    <!-- IDEA: question 5 -->
-    <div id ="inactive" class="qs q1">
-      <p>Ces derniers jours, avez-vous un mal de gorge ?</p>
-      <form>
-        <input type="radio" id="oui" name="fav_language" value="one">
-        <label for="html">Oui</label><br>
-        <input type="radio" id="non" name="fav_language" value="two">
-        <label for="css">Non</label><br>
-        <div class="btns">
-          <button type="button" name="button">Question précédente</button>
-          <button type="button" name="button">Question suivante</button>
-        </div>
-      </form>
-    </div>
-  <!-- IDEA: question 6 -->
-  <div id ="inactive" class="qs q1">
-    <p>Ces dernières 24 heures, avez-vous de la diarrhée ? Avec au moins 3 selles molles.</p>
-    <form>
-      <input type="radio" id="oui" name="fav_language" value="one">
-      <label for="html">Oui</label><br>
-      <input type="radio" id="non" name="fav_language" value="two">
-      <label for="css">Non</label><br>
-      <div class="btns">
-        <button type="button" name="button">Question précédente</button>
-        <button type="button" name="button">Question suivante</button>
-      </div>
-    </form>
-  </div>
-   <!-- IDEA: question 7 -->
-   <div id ="inactive" class="qs q1">
-    <p>Ces derniers jours, avez-vous un mal de gorge ?</p>
-    <form>
-      <input type="radio" id="oui" name="fav_language" value="one">
-      <label for="html">Oui</label><br>
-      <input type="radio" id="non" name="fav_language" value="two">
-      <label for="css">Non</label><br>
-      <div class="btns">
-        <button type="button" name="button">Question précédente</button>
-        <button type="button" name="button">Question suivante</button>
-      </div>
-    </form>
-  </div>
-  <!-- IDEA: question 8 -->
-  <div id ="inactive" class="qs q1">
-    <p>Ces derniers jours, avez-vous une fatigue inhabituelle qui vous a obligé à vous reposer plus de la moitié de la journée ?</p>
-    <form>
-      <input type="radio" id="oui" name="fav_language" value="one">
-      <label for="html">Oui</label><br>
-      <input type="radio" id="non" name="fav_language" value="two">
-      <label for="css">Non</label><br>
-      <div class="btns">
-        <button type="button" name="button">Question précédente</button>
-        <button type="button" name="button">Question suivante</button>
-      </div>
-    </form>
-  </div>
-  <!-- IDEA: question 9 -->
-  <div id ="inactive" class="qs q1">
-    <p>Avez-vous des difficultés importantes pour vous alimenter ou boire depuis plus de 24h ?</p>
-    <form>
-      <input type="radio" id="oui" name="fav_language" value="one">
-      <label for="html">Oui</label><br>
-      <input type="radio" id="non" name="fav_language" value="two">
-      <label for="css">Non</label><br>
-      <div class="btns">
-        <button type="button" name="button">Question précédente</button>
-        <button type="button" name="button">Question suivante</button>
-      </div>
-    </form>
-  </div>
-  <!-- IDEA: question 10 -->
-  <div id ="inactive" class="qs q1">
-    <p>Dans les dernières 24 heures, avez-vous noté un manque de souffle inhabituel lorsque vous parlez ou faites un petit effort ?</p>
-    <form>
-      <input type="radio" id="oui" name="fav_language" value="one">
-      <label for="html">Oui</label><br>
-      <input type="radio" id="non" name="fav_language" value="two">
-      <label for="css">Non</label><br>
-      <div class="btns">
-        <button type="button" name="button">Question précédente</button>
-        <button type="button" name="button">Question suivante</button>
-      </div>
-    </form>
-  </div>
-  <!-- IDEA: question 11 -->
-  <div id ="inactive" class="qs q11">
-    <p>Quel est votre âge ? Ceci, afin de calculer un facteur de risque spécifique.</p>
-    <form>
-      <div class="input-group w-75 mx-auto">
-        <input type="number" class="form-control" placeholder="15-110">
-        <div class="input-group-append">
-          <span class="input-group-text">ans</span>
-        </div>
-      </div>
-      <div class="btns">
-        <button type="button" name="button">Question précédente</button>
-        <button type="button" name="button">Question suivante</button>
-      </div>
-    </form>
-  </div>
-  <!-- IDEA: question 12 -->
-  <div id ="inactive" class="qs q11">
-    <p>Quel est votre âge ? Ceci, afin de calculer un facteur de risque spécifique.</p>
-    <form>
-      <div class="input-group w-75 mx-auto">
-        <input type="number" class="form-control" placeholder="20-250">
-        <div class="input-group-append">
-          <span class="input-group-text">kg</span>
-        </div>
-      </div>
-      <div class="btns">
-        <button type="button" name="button">Question précédente</button>
-        <button type="button" name="button">Question suivante</button>
-      </div>
-    </form>
-  </div>
-  <!-- IDEA: question 13 -->
-  <div id ="inactive" class="qs q11">
-    <p>Quelle est votre taille ? Afin de calculer l’indice de masse corporelle qui est un facteur influençant le risque de complications de l’infection.</p>
-    <form>
-      <div class="input-group w-75 mx-auto">
-        <input type="number" class="form-control" placeholder="80-250">
-        <div class="input-group-append">
-          <span class="input-group-text">cm</span>
-        </div>
-      </div>
-      <div class="btns">
-        <button type="button" name="button">Question précédente</button>
-        <button type="button" name="button">Question suivante</button>
-      </div>
-    </form>
-  </div>
-  <!-- IDEA: question 14 -->
-  <div id ="inactive" class="qs q1">
-    <p>Avez-vous de l’hypertension artérielle mal équilibrée ? Ou avez-vous une maladie cardiaque ou vasculaire ? Ou prenez-vous un traitement à visée cardiologique ?</p>
-    <form>
-      <input type="radio" id="oui" name="fav_language" value="one">
-      <label for="html">Oui</label><br>
-      <input type="radio" id="non" name="fav_language" value="two">
-      <label for="css">Non</label><br>
-      <div class="btns">
-        <button type="button" name="button">Question précédente</button>
-        <button type="button" name="button">Question suivante</button>
-      </div>
-    </form>
-  </div>
-  <!-- IDEA: question 15 -->
-  <div id ="inactive" class="qs q1">
-    <p>Êtes-vous diabétique ?</p>
-    <form>
-      <input type="radio" id="oui" name="fav_language" value="one">
-      <label for="html">Oui</label><br>
-      <input type="radio" id="non" name="fav_language" value="two">
-      <label for="css">Non</label><br>
-      <div class="btns">
-        <button type="button" name="button">Question précédente</button>
-        <button type="button" name="button">Question suivante</button>
-      </div>
-    </form>
-  </div>
+    <script src="assets/js/quizz.js">
+
+    </script>
 </body>
 </html>
