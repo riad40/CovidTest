@@ -109,3 +109,15 @@
 .inp input{
     margin-right:20px;
 }
+
+/* ======== Qs : 11 to 15 ======== */
+
+.q11 input, .q11 span {
+  border: 1px solid #1078AD;
+}
+.q11 span {
+  background-color: rgba(77, 163, 206, 0.1);
+}
+.q11 form {
+  margin-left: 0px !important;
+}
