@@ -41,14 +41,23 @@
   margin: auto;
   display:flex;
   flex-direction: column;
+  margin-bottom:60px;
 }
 
 .qs p{
   text-align: center;
-  margin: 20px 0 100px 0;
+  margin: 20px 0 125px 0;
 }
 .qs form{
   margin-left:40px;
+}
+.qs form button{
+  font-size: 23px;
+  background: #1078ad;
+  color:white;
+  padding:10px 20px;
+  border-radius: 5px;
+  margin-top: 50px;
 }
 #oui{
   margin-bottom:20px;
