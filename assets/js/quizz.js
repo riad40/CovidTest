@@ -69,5 +69,5 @@ function quizStart() {
     
     document.querySelector('#Question' + i).classList.remove('inactive')
     document.querySelector('#Question' + i).classList.add('active')
-
+    
 }
