@@ -41,7 +41,7 @@ function nextF() {
     document.querySelector('#Question' + i).classList.add('inactive')
     i++
     document.querySelector('#Question' + i).classList.remove('inactive')
-    document.querySelector('#Question' + i).classList.add('active')
+    document.querySelector('#Question' + i).classList.add('active', 'animate__animated', 'animate__backInRight')
 }
 
 /* ====== previous button ====== */
@@ -53,9 +53,9 @@ previous.forEach((btn) => {
 function previousF() {
     document.querySelector('#Question' + i).classList.remove('active')
     document.querySelector('#Question' + i).classList.add('inactive')
-    i--
+    --i
     document.querySelector('#Question' + i).classList.remove('inactive')
-    document.querySelector('#Question' + i).classList.add('active')
+    document.querySelector('#Question' + i).classList.add('active', 'animate__animated', 'animate__backInLeft')
 }
 
 /* ====== start button ====== */
@@ -68,6 +68,7 @@ function quizStart() {
     document.querySelector('#conseilP').classList.add('inactive')
     
     document.querySelector('#Question' + i).classList.remove('inactive')
-    document.querySelector('#Question' + i).classList.add('active')
+    document.querySelector('#Question' + i).classList.add('active','animate__animated','animate__heartBeat')
+    
     
 }
