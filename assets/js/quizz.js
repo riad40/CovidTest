@@ -3,6 +3,11 @@
 const previous = document.querySelectorAll('#previous')
 const next = document.querySelectorAll('#next')
 
+// start button
+
+const btnStart = document.getElementById('btnStart')
+//console.log(btnStart)
+
 // Questions 
 
 document.querySelector('#Question1')
@@ -51,4 +56,18 @@ function previousF() {
     i--
     document.querySelector('#Question' + i).classList.remove('inactive')
     document.querySelector('#Question' + i).classList.add('active')
+}
+
+/* ====== start button ====== */
+
+btnStart.addEventListener('click', quizStart)
+
+function quizStart() {
+    //console.log('clicked')
+    document.querySelector('#conseilP').classList.remove('active')
+    document.querySelector('#conseilP').classList.add('inactive')
+    
+    document.querySelector('#Question' + i).classList.remove('inactive')
+    document.querySelector('#Question' + i).classList.add('active')
+
 }

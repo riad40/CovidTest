@@ -21,8 +21,21 @@
     <div class="progress">
       <img width="450px" src="./assets/img/progress.png" alt="progress">
     </div>
+    <!-- Conseil Paragraph -->
+    <div id ="conseilP" class="container text-center active">
+      <div id="paragraphConseil">
+        <h5>Préambule</h5>
+        <p>L’application est fournie à titre gratuit, en l’état, uniquement à des fins d’information pour contribuer à fluidifier la prise en charge des personnes par les services d’urgences pendant l’épidémie de Coronavirus COVID-19. L’exhaustivité, l’exactitude, le caractère à jour des informations et contenus mis à disposition dans cette application, ou leur adéquation à des finalités particulières, ne sont pas garantis.</p>
+        <hr class="my-4">
+        <p>Cette application ne substitue pas votre médecin qui est plus apte à vous donner plus de précision.
+        <br>
+        Les informations de cette application est le premier niveau de la détection des cas possibles du COVID-19.
+        </p>
+      </div>
+      <div class="mybtn"><button  id="btnStart" class="btn btn-start">Démarer le test</button></div>
+    </div>
     <!-- IDEA: question 1 -->
-    <div id ="Question1" class="qs q1 active">
+    <div id ="Question1" class="qs q1 inactive">
       <p>Avez-vous eu de la fièvre depuis 10 jours?</p>
       <form>
         <input type="radio" id="oui" name="fav_language" value="one">
@@ -40,7 +53,7 @@
       <p>Quelle est votre température corporelle ?</p>
       <form>
         <div class="inp">
-          <input type="number" name="" value="">
+          <input type="number" name="" value="" placeholder="34-40">
           <label>Degrée</label>
         </div>
         <div class="btns">
