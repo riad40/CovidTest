@@ -86,13 +86,14 @@
   display:flex;
   flex-direction: column;
   margin-bottom:60px;
-  padding:45px 25px;
+  padding:0px 0px 45px 0px;
   border: 1px solid lightgrey;
 }
 
 .qs p{
   text-align: center;
   margin: 20px 0 125px 0;
+  padding: 0px 40px;
 }
 .qs form{
   margin-left:40px;
@@ -189,6 +190,12 @@
   justify-content: center;
   margin-top: 20px;
 }
+
+#fil {
+  background-color: lightgray;
+  padding: 5px 10px;
+}
+
 /* ======== Qs : 11 to 15 ======== */
 
 .q11 input, .q11 span {
