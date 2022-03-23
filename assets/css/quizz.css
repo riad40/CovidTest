@@ -29,10 +29,41 @@
 .progress{
   display:flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   margin: 50px 0;
-  height:auto;
+  height: auto;
   background: none;
+}
+
+.adviceProgress {
+  width: 30px;
+  height: 30px;
+  background-color: #1078AD;
+  border-radius: 100%;
+}
+
+.questionsProgress {
+  width: 30px;
+  height: 30px;
+  background-color: #1078AD;
+  border-radius: 100%;
+}
+
+.resultProgress {
+  width: 30px;
+  height: 30px;
+  background-color: #1078AD;
+  border-radius: 100%;
+}
+
+.adv, .quests, .result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progressHover {
+  background-color: #F4CF1B;
 }
 
 .qs{
@@ -91,6 +122,11 @@
   margin-top:40px;
   display:flex;
   justify-content: space-between;
+}
+.btnsQ1 {
+  margin-top:40px;
+  display:flex;
+  justify-content: flex-end;
 }
 .inactive{
   display:none;

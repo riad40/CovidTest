@@ -6,7 +6,6 @@ const next = document.querySelectorAll('#next')
 // start button
 
 const btnStart = document.getElementById('btnStart')
-//console.log(btnStart)
 
 // Questions 
 
@@ -25,6 +24,13 @@ document.querySelector('#Question12')
 document.querySelector('#Question13')
 document.querySelector('#Question14')
 document.querySelector('#Question15')
+document.querySelector('#Question16')
+document.querySelector('#Question17')
+document.querySelector('#Question18')
+document.querySelector('#Question19')
+document.querySelector('#Question20')
+document.querySelector('#Question21')
+document.querySelector('#Question22')
 
 // 
 
@@ -64,11 +70,13 @@ btnStart.addEventListener('click', quizStart)
 
 function quizStart() {
     //console.log('clicked')
+
+    document.querySelector('#advProgress').classList.remove('progressHover')
+    document.querySelector('#questsProgress').classList.add('progressHover')
+
     document.querySelector('#conseilP').classList.remove('active')
     document.querySelector('#conseilP').classList.add('inactive')
     
     document.querySelector('#Question' + i).classList.remove('inactive')
-    document.querySelector('#Question' + i).classList.add('active','animate__animated','animate__heartBeat')
-    
-    
+    document.querySelector('#Question' + i).classList.add('active','animate__animated','animate__backInRight')
 }
