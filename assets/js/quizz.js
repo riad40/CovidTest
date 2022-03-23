@@ -71,8 +71,11 @@ btnStart.addEventListener('click', quizStart)
 function quizStart() {
     //console.log('clicked')
 
-    document.querySelector('#advProgress').classList.remove('progressHover')
-    document.querySelector('#questsProgress').classList.add('progressHover')
+    document.querySelector('#advProgress').classList.remove('progressHover2', 'progressFlex')
+    document.querySelector('#advProgress1').classList.remove('progressHover1')
+
+    document.querySelector('#questsProgress').classList.add('progressHover2', 'progressFlex')
+    document.querySelector('#questsProgress1').classList.add('progressHover1')
 
     document.querySelector('#conseilP').classList.remove('active')
     document.querySelector('#conseilP').classList.add('inactive')

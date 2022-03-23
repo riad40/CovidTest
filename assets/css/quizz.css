@@ -62,8 +62,21 @@
   align-items: center;
 }
 
-.progressHover {
+.progressHover1 {
   background-color: #F4CF1B;
+}
+
+.progressHover2 {
+  width: 60px;
+  height: 60px;
+  background-color: #98bed1;
+  border-radius: 100%;
+}
+
+.progressFlex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .qs{
