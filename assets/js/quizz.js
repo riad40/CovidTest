@@ -7,7 +7,7 @@ const next = document.querySelectorAll('#next')
 
 const btnStart = document.getElementById('btnStart')
 
-// Questions 
+// Questions
 
 document.querySelector('#Question1')
 document.querySelector('#Question2')
@@ -32,7 +32,7 @@ document.querySelector('#Question20')
 document.querySelector('#Question21')
 document.querySelector('#Question22')
 
-// 
+//
 
 let i = 1
 
@@ -79,7 +79,26 @@ function quizStart() {
 
     document.querySelector('#conseilP').classList.remove('active')
     document.querySelector('#conseilP').classList.add('inactive')
-    
+
     document.querySelector('#Question' + i).classList.remove('inactive')
     document.querySelector('#Question' + i).classList.add('active','animate__animated','animate__slideInRight')
+}
+
+
+const all = document.querySelectorAll('#oui')
+let index = 0
+
+all.forEach((inp) => {
+    if (inp.checked == true) {
+        alert('if')
+    }
+})
+
+function inc(){
+    all.forEach((inp) => {
+        if (inp.checked == true) {
+            index++
+        }
+    })
+    console.log(index)
 }
