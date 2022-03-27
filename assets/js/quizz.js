@@ -7,6 +7,12 @@ const next = document.querySelectorAll('#next')
 
 const btnStart = document.getElementById('btnStart')
 
+// inputs
+
+const yes = document.querySelectorAll('#oui')
+const no = document.querySelectorAll('#non')
+
+
 // Questions
 
 document.querySelector('#Question1')
@@ -37,10 +43,22 @@ document.querySelector('#Question22')
 let i = 1
 
 /* ====== next button ====== */
-
 next.forEach((btn) => {
-    btn.addEventListener('click', nextF)
+    btn.addEventListener('click', e =>{
+        yes.forEach((ye) => {
+            if (ye.checked) {
+                btn.addEventListener('click', nextF)
+            }
+        no.forEach(n => {
+            if (n.checked) {
+                btn.addEventListener('click', nextF)
+            }
+        })
+        })
+    })
 })
+
+// i don't know my brain is fried i can't get every question to work but the first one
 
 function nextF() {
     document.querySelector('#Question' + i).classList.remove('active')
@@ -85,17 +103,11 @@ function quizStart() {
 }
 
 
-const all = document.querySelectorAll('#oui')
 let index = 0
 
-all.forEach((inp) => {
-    if (inp.checked == true) {
-        alert('if')
-    }
-})
 
 function inc(){
-    all.forEach((inp) => {
+    yes.forEach((inp) => {
         if (inp.checked == true) {
             index++
         }
