@@ -3,7 +3,7 @@
   padding:0;
   box-sizing: border-box;
 }
-body{
+html body{
   width: 100%;
 }
 .navbar-container{
