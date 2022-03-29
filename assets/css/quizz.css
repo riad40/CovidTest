@@ -235,3 +235,35 @@ html body{
 .q11 form {
   margin-left: 0px !important;
 }
+/* result css */
+.result{
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background-color: #e9ecef;
+    border-radius: 0.3rem;
+    width: 70%;
+    min-width: 700px;
+    display: flex;
+    text-align: center;
+    margin: auto;
+    margin-top: 30px;
+}
+.tres{
+  color: #1078AD;
+  font-weight: bolder;
+}
+.res1{
+  color: red;
+  font-weight: bold;
+}
+.dbtn{
+    background-color: rgba(16, 121, 173, 0.2);
+    border: 2px solid #1078AD;
+    color: #1078AD;
+    width: 300px !important;
+    font-size: 20px !important;
+    padding: 5px;
+}
+.dbtn:hover{
+  color: white;
+}
