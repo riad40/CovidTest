@@ -29,6 +29,9 @@ function quizStart() {
     questionsPage.classList.remove('inactive')
     questionsPage.classList.add('active','animate__animated', 'animate__bounceInRight')
 
+    // progress bar
+
+
 }
 
 // Questions
@@ -204,6 +207,11 @@ next.addEventListener('click', nextQuestion)
 function nextQuestion() {
     if (getAnswer(compteur)) {
         compteur++
+        const progVal = document.getElementById('prog')
+        const counter = document.getElementById('counter')
+        progVal.value++
+        counter.innerText++
+        console.log(compteur)
         if (compteur > 0) {
             previous.classList.remove('inactive')
             switchBtns.classList.add('btns')
@@ -216,6 +224,9 @@ function nextQuestion() {
     }
 }
 
+// progress bar
+
+
 /* ========= previous button ========= */
 
 const previous = document.querySelector('#previous')
@@ -224,6 +235,10 @@ previous.addEventListener('click', previousQuestion)
 
 function previousQuestion() {
     compteur--
+    const progVal = document.getElementById('prog')
+    const counter = document.getElementById('counter')
+    progVal.value--
+    counter.innerText--
     if (compteur == 0) {
         previous.classList.add('inactive')
         switchBtns.classList.remove('btns')
