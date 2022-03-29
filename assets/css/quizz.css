@@ -94,15 +94,18 @@ html body{
 
 .qs p{
   text-align: center;
-  margin: 20px 0 125px 0;
+  margin: 20px 0 20px 0;
   padding: 0px 40px;
+  height: 200px;
 }
 .qs form{
   margin-left:40px;
+  height: 100px;
 }
-.qs form button{
+.qs .btns button{
   font-size: 20px;
-  background: #1078ad;
+  background: #3894c2;
+  border: none;
   color:white;
   padding:10px 20px;
   border-radius: 5px;
@@ -136,13 +139,24 @@ html body{
 
 .btns{
   margin-top:40px;
+  padding:  0px 40px;
   display:flex;
   justify-content: space-between;
 }
 .btnsQ1 {
   margin-top:40px;
+  padding:  0px 40px;
   display:flex;
   justify-content: flex-end;
+}
+.btnsQ1 button {
+  font-size: 20px;
+  background: #3894c2;
+  border: none;
+  color:white;
+  padding:10px 20px;
+  border-radius: 5px;
+  margin-top: 50px;
 }
 .inactive{
   display:none;

@@ -1,116 +1,109 @@
-// previous and next buttons
-
-const previous = document.querySelectorAll('#previous')
-const next = document.querySelectorAll('#next')
-
-// start button
-
-const btnStart = document.getElementById('btnStart')
-
-// inputs
-
-const yes = document.querySelectorAll('#oui')
-const no = document.querySelectorAll('#non')
-
-
-// Questions
-
-document.querySelector('#Question1')
-document.querySelector('#Question2')
-document.querySelector('#Question3')
-document.querySelector('#Question4')
-document.querySelector('#Question5')
-document.querySelector('#Question6')
-document.querySelector('#Question7')
-document.querySelector('#Question8')
-document.querySelector('#Question9')
-document.querySelector('#Question10')
-document.querySelector('#Question11')
-document.querySelector('#Question12')
-document.querySelector('#Question13')
-document.querySelector('#Question14')
-document.querySelector('#Question15')
-document.querySelector('#Question16')
-document.querySelector('#Question17')
-document.querySelector('#Question18')
-document.querySelector('#Question19')
-document.querySelector('#Question20')
-document.querySelector('#Question21')
-document.querySelector('#Question22')
-
-//
-
-let i = 1
-
-/* ====== next button ====== */
-next.forEach((btn) => {
-    btn.addEventListener('click', e =>{
-        yes.forEach((ye) => {
-            if (ye.checked) {
-                btn.addEventListener('click', nextF)
-            }
-        no.forEach(n => {
-            if (n.checked) {
-                btn.addEventListener('click', nextF)
-            }
-        })
-        })
-    })
-})
-
-// i don't know my brain is fried i can't get every question to work but the first one
-
-function nextF() {
-    document.querySelector('#Question' + i).classList.remove('active')
-    document.querySelector('#Question' + i).classList.add('inactive')
-    i++
-    document.querySelector('#Question' + i).classList.remove('inactive')
-    document.querySelector('#Question' + i).classList.add('active', 'animate__animated', 'animate__slideInRight')
-}
-
-/* ====== previous button ====== */
-
-previous.forEach((btn) => {
-    btn.addEventListener('click', previousF)
-})
-
-function previousF() {
-    document.querySelector('#Question' + i).classList.remove('active')
-    document.querySelector('#Question' + i).classList.add('inactive')
-    i--
-    document.querySelector('#Question' + i).classList.remove('inactive')
-    document.querySelector('#Question' + i).classList.add('active', 'animate__animated', 'animate__slideInLeft')
-}
-
 /* ====== start button ====== */
+
+const btnStart = document.querySelector('#btnStart')
 
 btnStart.addEventListener('click', quizStart)
 
 function quizStart() {
-    //console.log('clicked')
+    // advice progresse
+    const adviceProgresse = document.querySelector('#advProgress')
+    const adviceProgresse1 = document.querySelector('#advProgress1')
 
-    document.querySelector('#advProgress').classList.remove('progressHover2', 'progressFlex')
-    document.querySelector('#advProgress1').classList.remove('progressHover1')
+    adviceProgresse.classList.remove('progressHover2', 'progressFlex')
+    adviceProgresse1.classList.remove('progressHover1')
 
-    document.querySelector('#questsProgress').classList.add('progressHover2', 'progressFlex')
-    document.querySelector('#questsProgress1').classList.add('progressHover1')
+    // questions progresse
+    const questionsProgresse = document.querySelector('#questionProgress')
+    const questionsProgresse1 = document.querySelector('#questionProgress1')
 
-    document.querySelector('#conseilP').classList.remove('active')
-    document.querySelector('#conseilP').classList.add('inactive')
+    questionsProgresse.classList.add('progressHover2', 'progressFlex')
+    questionsProgresse1.classList.add('progressHover1')
 
-    document.querySelector('#Question' + i).classList.remove('inactive')
-    document.querySelector('#Question' + i).classList.add('active','animate__animated','animate__slideInRight')
+    // scroll to questions
+    const conseilPage = document.querySelector('#conseilPage')
+    const questionsPage = document.querySelector('#questionsPage')
+
+    conseilPage.classList.remove('active')
+    conseilPage.classList.add('inactive')
+    questionsPage.classList.remove('inactive')
+    questionsPage.classList.add('active','animate__animated', 'animate__bounceInRight')
+
 }
 
+// Questions
 
-let index = 0
+const questions = [ 
+    {
+        title: 'Quelle est la capitale de la France ?',
+        type: 'radio',
+        options: ['yaap', 'noop']
+    },
+    {
+        title: 'Quelle est la capitale de la Belgique ?',
+        type: 'number',
+        answer: ''
+    },
+    {
+        title: 'la fin ?',
+        type: 'number',
+        answer: ''
+    }
+]
 
+// display questions
 
-function inc(){
-    yes.forEach((inp) => {
-        if (inp.checked == true) {
-            index++
-        }
-    })
-    console.log(index)
+const questionTitle = document.querySelector('#title')
+// console.log(questionTitle)
+let compteur = 0
+questionTitle.innerText = questions[compteur].title
+generateForm(compteur)
+const switchBtns = document.querySelector('#switchingBtns') 
+switchBtns.classList.remove('btns')
+switchBtns.classList.add('btnsQ1')
+
+/* ========= next button ========= */
+
+const next = document.querySelector('#next')
+
+next.addEventListener('click', nextQuestion)
+
+function nextQuestion() {
+    compteur++
+    if (compteur > 0) {
+        previous.classList.remove('inactive')
+        switchBtns.classList.add('btns')
+        switchBtns.classList.remove('btnsQ1')
+    } 
+    questionTitle.innerText = questions[compteur].title
 }
+
+/* ========= previous button ========= */
+
+const previous = document.querySelector('#previous')
+
+previous.addEventListener('click', previousQuestion)
+
+function previousQuestion() {
+    compteur--
+    if (compteur == 0) {
+        previous.classList.add('inactive')
+        switchBtns.classList.remove('btns')
+        switchBtns.classList.add('btnsQ1')
+    }
+    questionTitle.innerText = questions[compteur].title
+}
+
+/* ========= generate form ========= */
+
+// function generateForm(compteur) {
+//     const form = document.querySelector("#form")
+//     let question = questions[compteur]
+//     switch (question.type) {
+//         case 'radio':
+
+//             break;
+    
+//         default:
+//             break;
+//     }
+// }
