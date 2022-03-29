@@ -32,9 +32,6 @@ function quizStart() {
     questionsPage.classList.remove('inactive')
     questionsPage.classList.add('active','animate__animated', 'animate__bounceInRight')
 
-    // progress bar
-
-
 }
 
 // Questions
@@ -187,7 +184,7 @@ const questions = [
 
 ]
 
-console.log(questions.length)
+// console.log(questions.length)
 
 // display questions
 
@@ -214,14 +211,16 @@ function nextQuestion() {
         const counter = document.getElementById('counter')
         progVal.value++
         counter.innerText++
-        console.log(compteur)
+        // console.log(compteur)
         if (compteur > 0) {
             previous.classList.remove('inactive')
             switchBtns.classList.add('btns')
             switchBtns.classList.remove('btnsQ1')
         } if (compteur == 21) {
             next.textContent = 'finish'
-            next.addEventListener('click', displayResult)
+            next.classList.add('finish')
+            const finish = document.querySelector('.finish')
+            finish.addEventListener('click', displayResult)
         }
         questionTitle.innerText = questions[compteur].title
         generateForm(compteur)
@@ -257,7 +256,7 @@ function generateForm(compteur) {
     let question = questions[compteur]
     switch (question.type) {
         case 'radio':
-            radioValue=null;
+            radioValue = null
             for (let i = 0; i < question.options.length; i++) {
 
                 let radio  = document.createElement("input")
@@ -275,8 +274,7 @@ function generateForm(compteur) {
                 form.appendChild(radio)
                 form.appendChild(label)
                 radio.addEventListener('change',(e)=>{
-                        radioValue=e.target.value;
-
+                    radioValue = e.target.value
                 })
             }
 
@@ -308,39 +306,47 @@ function generateForm(compteur) {
 }
 
 /* ========= get answers ========= */
+const answers = []
 
 function getAnswer(compteur) {
    
     const form = document.querySelector("#form")
     let question = questions[compteur]
     switch (question.type) {
+
         case 'radio':
+
             if(radioValue!=null){
-                question.answer = radioValue;
-                console.log("given answer is "+question.answer )
+                question.answer = radioValue
+                answers.push(question.answer)
                 return true
             } else {
                 return false
             }
+
             break;
+
         case 'number':
+
             let input = document.querySelector("#"+question.numberType)
             if (input.value != '' && input.value >= question.min && input.value <= question.max) {
                 question.answer = input.value;
-                console.log("given answer is "+question.answer)
+                answers.push(question.answer)
                 return true
             } else {
                 return false
             }
-            break;    
+
+            break; 
+
         default:
             break;
     }
 
-    
 }
 
 /* ========= display results ========= */
+
 function displayResult() {
 
     const result = document.querySelector("#displayResult")
@@ -366,4 +372,81 @@ function displayResult() {
     resultProgress.classList.add('progressHover2', 'progressFlex')
     resultProgresse1.classList.add('progressHover1')
 
+    anlyseResults()
+
+}
+
+/* ========== algo ========== */
+
+let majorFactor = 0 
+let minorFactor = 0
+let pronoFactor = 0
+let gravityFactor = 0
+
+function anlyseResults() {
+
+    // facteur pronostique
+
+    if (answers[11] >= 70) {
+        pronoFactor++
+    }
+    if (answers[14] === 'Oui') {
+        pronoFactor++
+    }
+    if (answers[15] === 'Oui') {
+        pronoFactor++
+    }
+    if (answers[16] === 'Oui') {
+        pronoFactor++
+    }
+    if (answers[17] === 'Oui') {
+        pronoFactor++
+    }
+    if (answers[18] === 'Oui') {
+        pronoFactor++
+    }
+    if (answers[19] === 'Oui') {
+        pronoFactor++
+    }
+    if (answers[20] === 'Oui') {
+        pronoFactor++
+    }
+    if (answers[21] === 'Oui') {
+        pronoFactor++
+    }
+    if (answers[22] === 'Oui') {
+        pronoFactor++
+    }
+
+    // facteur mineur
+
+    if (answers[2] >= 39) {
+        minorFactor++
+    }
+    if (answers[9] === 'Oui') {
+        minorFactor++
+    }
+    if (answers[10] === 'Fatigue' || answers[10] === 'Trés Fatigué(e)') {
+        minorFactor++
+    }
+
+    // facteur majeur
+
+    if (answers[2] <= 35,4) {
+        majorFactor++
+    }
+    if (answers[9] === 'Oui') {
+        majorFactor++
+    }
+    if (answers[8] === 'Oui') {
+        majorFactor++
+    }
+
+    console.log('major ' + majorFactor)
+    console.log('minor ' + minorFactor)
+    console.log('prono ' + pronoFactor)
+
+    console.log(answers)
+
+    
 }
