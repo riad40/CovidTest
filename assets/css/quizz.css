@@ -271,3 +271,6 @@ html body{
 .inactiveResult{
   display: none;
 }
+.activeResult {
+  display: block;
+}

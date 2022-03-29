@@ -216,16 +216,14 @@ function nextQuestion() {
             previous.classList.remove('inactive')
             switchBtns.classList.add('btns')
             switchBtns.classList.remove('btnsQ1')
-        } if (compteur == 22) {
+        } if (compteur == 21) {
             next.textContent = 'finish'
+            next.addEventListener('click', displayResult)
         }
         questionTitle.innerText = questions[compteur].title
         generateForm(compteur)
     }
 }
-
-// progress bar
-
 
 /* ========= previous button ========= */
 
@@ -337,4 +335,32 @@ function getAnswer(compteur) {
     }
 
     
+}
+
+/* ========= display results ========= */
+function displayResult() {
+
+    const result = document.querySelector("#displayResult")
+    const questionsPage = document.querySelector('#questionsPage')
+
+    questionsPage.classList.add('inactive')
+    questionsPage.classList.remove('active')
+
+    result.classList.add('activeResult','animate__animated', 'animate__bounceInRight')
+    result.classList.remove('inactiveResult')
+
+    // questions progresse
+    const questionsProgresse = document.querySelector('#questionProgress')
+    const questionsProgresse1 = document.querySelector('#questionProgress1')
+
+    questionsProgresse.classList.remove('progressHover2', 'progressFlex')
+    questionsProgresse1.classList.remove('progressHover1')
+
+    // result progresse
+    const resultProgress = document.querySelector('#resultProgress')
+    const resultProgresse1 = document.querySelector('#resultProgress1')
+
+    resultProgress.classList.add('progressHover2', 'progressFlex')
+    resultProgresse1.classList.add('progressHover1')
+
 }
