@@ -310,6 +310,7 @@ function generateForm(compteur) {
 }
 
 /* ========= get answers ========= */
+
 const answers = []
 
 function getAnswer(compteur) {
@@ -474,7 +475,7 @@ function anlyseResults() {
             }
         }
     
-        //Tout patient avec un facteur pronostique ou plus
+        // Tout patient avec un facteur pronostique ou plus
 
         if(pronoFactor >= 1){
             if((minorFactor == 0 && majorFactor == 0) || minorFactor == 1){
@@ -486,7 +487,7 @@ function anlyseResults() {
             }
         }
 
-        //Tout patient avec ou sans facteur pronostique avec au moins un facteur de gravité majeur
+        // Tout patient avec ou sans facteur pronostique avec au moins un facteur de gravité majeur
 
         if((pronoFactor >= 0) && majorFactor >= 1 ){
             mainResult.innerText = "appel 141"
@@ -495,12 +496,12 @@ function anlyseResults() {
     
     // Tout patient avec fièvre et toux 
     
-    if(answers[1]==='Oui' && answers[3]==='Oui'){
+    if(answers[1] === 'Oui' && answers[3] === 'Oui'){
 
-        //Tout patient sans facteur pronostique 
+        // Tout patient sans facteur pronostique 
 
         if(pronoFactor == 0){
-        if((minorFactor>= 0) && majorFactor == 0 ){
+        if((minorFactor >= 0) && majorFactor == 0 ){
         mainResult.innerText = "téléconsultation ou médecin généraliste ou visite à domicile " + 
         "appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent." 
         }
@@ -520,7 +521,7 @@ function anlyseResults() {
 
         // Tout patient avec ou sans facteur pronostique avec au moins un facteur de gravité majeur
 
-        if((pronoFactor >= 0) && majorFactor>=1 ){
+        if((pronoFactor >= 0) && majorFactor >= 1 ){
             mainResult.innerText = "appel 141" 
         }
     }
