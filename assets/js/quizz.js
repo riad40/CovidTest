@@ -290,6 +290,9 @@ function generateForm(compteur) {
             input.id = question.numberType
             input.name = question.numberType
             input.className = "form-control"
+            input.setAttribute("placeholder", question.min + ' - ' + question.max)
+            input.setAttribute("min", question.min)
+            input.setAttribute("max", question.max)
             const span = document.createElement('span')
             span.textContent = question.spanName
             span.className = "input-group-text"
