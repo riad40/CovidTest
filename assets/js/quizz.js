@@ -501,10 +501,10 @@ function anlyseResults() {
         // Tout patient sans facteur pronostique 
 
         if(pronoFactor == 0){
-        if((minorFactor >= 0) && majorFactor == 0 ){
-        mainResult.innerText = "téléconsultation ou médecin généraliste ou visite à domicile " + 
-        "appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent." 
-        }
+            if((minorFactor >= 0) && majorFactor == 0 ){
+            mainResult.innerText = "téléconsultation ou médecin généraliste ou visite à domicile " + 
+            "appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent." 
+            }
         }
 
         // Tout patient avec un facteur pronostique ou plus 
