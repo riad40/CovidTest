@@ -51,11 +51,8 @@ const questions = [
     },
     {
         title: 'Ces derniers jours, avez-vous une toux ou une augmentation de votre toux habituelle ?',
-        type: 'number',
-        numberType: 'lharara',
-        spanName: 'degré',
-        min: 37,
-        max: 40,
+        type: 'radio',
+        options: ['Oui', 'NON'],
         answer: ''
     },
     {
