@@ -449,29 +449,33 @@ function anlyseResults() {
     console.log('major ' + majorFactor)
     console.log('minor ' + minorFactor)
     console.log('prono ' + pronoFactor)
+
     // remeber to deleted used to chek if data is available
 
     console.log(answers)
 
     // algo pour determiner la gravite :
 
-      // Patient avec fièvre, ou toux + mal de gorge, ou toux + courbatures ou fièvre + diarrhée
-      if(answers[1] === 'Oui' || (answers[3] === 'Oui' && answers[5] === 'Oui') || (answers[3] === 'Oui' && answers[4] === 'Oui') || (answers[1] === 'Oui' && answers[6] === 'Oui')){
+    // Patient avec fièvre, ou toux + mal de gorge, ou toux + courbatures ou fièvre + diarrhée
+
+    if(answers[1] === 'Oui' || (answers[3] === 'Oui' && answers[5] === 'Oui') || (answers[3] === 'Oui' && answers[4] === 'Oui') || (answers[1] === 'Oui' && answers[6] === 'Oui')){
+
         // Tout patient sans facteur pronostique
     
         if(pronoFactor == 0){
-                if(minorFactor == 0 && majorFactor == 0 && ( answers[11] < 50)){
-                    mainResult.innerText = "nous vous conseillons de rester à votre domicile et de contacter votre médecin en " + 
-                    "cas d’apparition de nouveaux symptômes. Vous pourrez aussi utiliser à nouveau l’application pour réévaluer" +
-                    "vos symptômes." 
-                }
-                else if(minorFactor == 0 && majorFactor >= 1 && ( answers[11] > 50 && answers[11] < 69)){
-                    mainResult.innerText = "téléconsultation ou médecin généraliste ou visite à domicile " +
-                    "appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent."  
-                }
+
+            if(minorFactor == 0 && majorFactor == 0 && ( answers[11] < 50)){
+                mainResult.innerText = "nous vous conseillons de rester à votre domicile et de contacter votre médecin en " + 
+                "cas d’apparition de nouveaux symptômes. Vous pourrez aussi utiliser à nouveau l’application pour réévaluer" +
+                "vos symptômes." 
+            } else if(minorFactor == 0 && majorFactor >= 1 && ( answers[11] > 50 && answers[11] < 69)){
+                mainResult.innerText = "téléconsultation ou médecin généraliste ou visite à domicile " +
+                "appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent."  
+            }
         }
     
         //Tout patient avec un facteur pronostique ou plus
+
         if(pronoFactor >= 1){
             if((minorFactor == 0 && majorFactor == 0) || minorFactor == 1){
                 mainResult.innerText = "téléconsultation ou médecin généraliste ou visite à domicile " + 
@@ -481,52 +485,63 @@ function anlyseResults() {
                 mainResult.innerText = "appel 141" 
             }
         }
+
         //Tout patient avec ou sans facteur pronostique avec au moins un facteur de gravité majeur
-        if((pronoFactor>= 0) && majorFactor>=1 ){
+
+        if((pronoFactor >= 0) && majorFactor >= 1 ){
             mainResult.innerText = "appel 141"
         }
-     }
+    }
     
-     // Tout patient avec fièvre et toux 
+    // Tout patient avec fièvre et toux 
     
-      if(answers[1]==='Oui' && answers[3]==='Oui')
-      {
-          //Tout patient sans facteur pronostique 
-          if(pronoFactor == 0){
-              if((minorFactor>= 0) && majorFactor == 0 ){
+    if(answers[1]==='Oui' && answers[3]==='Oui'){
+
+        //Tout patient sans facteur pronostique 
+
+        if(pronoFactor == 0){
+        if((minorFactor>= 0) && majorFactor == 0 ){
+        mainResult.innerText = "téléconsultation ou médecin généraliste ou visite à domicile " + 
+        "appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent." 
+        }
+        }
+
+        // Tout patient avec un facteur pronostique ou plus 
+
+        if(pronoFactor >= 0){
+            if((minorFactor == 0 || minorFactor == 1) && majorFactor == 0){
                 mainResult.innerText = "téléconsultation ou médecin généraliste ou visite à domicile " + 
                 "appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent." 
-              }
-          }
-          // Tout patient avec un facteur pronostique ou plus 
-          if(pronoFactor >= 0){
-              if((minorFactor == 0 || minorFactor == 1) && majorFactor == 0){
-                mainResult.innerText = "téléconsultation ou médecin généraliste ou visite à domicile " + 
-                "appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent." 
-              }
-              if(minorFactor >= 2){
+            }
+            if(minorFactor >= 2){
                 mainResult.innerText = "appel 141" 
-              }
-          }
-         // Tout patient avec ou sans facteur pronostique avec au moins un facteur de gravité majeur
-          if((pronoFactor>= 0) && majorFactor>=1 ){
+            }
+        }
+
+        // Tout patient avec ou sans facteur pronostique avec au moins un facteur de gravité majeur
+
+        if((pronoFactor >= 0) && majorFactor>=1 ){
             mainResult.innerText = "appel 141" 
         }
-      }
-          // Tout patient avec un seul symptôme parmi fièvre, toux, mal de gorge, courbatures 
-          if(answers[1] === 'Oui' || answers[3] === 'Oui' || answers[5] === 'Oui' || answers[4] === 'Oui'){
-             if(majorFactor == 0 && minorFactor== 0){
-                 mainResult.innerText = "Votre situation ne relève probablement pas du Covid-19. Consultez votre médecin au moindre doute" 
-              }
-             if((majorFactor == 1 || minorFactor == 1) || pronoFactor == 1){
-                 mainResult.innerText = "Votre situation ne relève probablement pas du Covid-19. Un avis médical est recommandé. Au moindre doute, appelez le 141." 
-              }
-          }
-         // Tout patient avec aucun symptôme
-        if ((answers[1] === 'Non') && (answers[3] === 'Non') && (answers[4] === 'Non') && (answers[5] === 'Non') && (answers[6] === 'Non')){
-            mainResult.innerText = 'Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à contacter votre médecin en cas de doute.' +
-            'Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la situation.'+
-            'Pour toute information concernant le Covid-19 allez vers la page d’accueil.'
+    }
+
+    // Tout patient avec un seul symptôme parmi fièvre, toux, mal de gorge, courbatures 
+
+    if(answers[1] === 'Oui' || answers[3] === 'Oui' || answers[5] === 'Oui' || answers[4] === 'Oui'){
+        if(majorFactor == 0 && minorFactor== 0){
+            mainResult.innerText = "Votre situation ne relève probablement pas du Covid-19. Consultez votre médecin au moindre doute" 
         }
+        if((majorFactor == 1 || minorFactor == 1) || pronoFactor == 1){
+            mainResult.innerText = "Votre situation ne relève probablement pas du Covid-19. Un avis médical est recommandé. Au moindre doute, appelez le 141." 
+        }
+    }
+    
+    // Tout patient avec aucun symptôme
+
+    if ((answers[1] === 'Non') && (answers[3] === 'Non') && (answers[4] === 'Non') && (answers[5] === 'Non') && (answers[6] === 'Non')){
+        mainResult.innerText = 'Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à contacter votre médecin en cas de doute.' +
+        'Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la situation.'+
+        'Pour toute information concernant le Covid-19 allez vers la page d’accueil.'
+    }
     
 }
