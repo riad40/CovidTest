@@ -1,4 +1,7 @@
-let radioValue=null;
+// store the radio value 
+
+let radioValue = null
+
 /* ====== start button ====== */
 
 const btnStart = document.querySelector('#btnStart')
@@ -314,20 +317,20 @@ function getAnswer(compteur) {
         case 'radio':
             if(radioValue!=null){
                 question.answer = radioValue;
-                console.log("given answer is "+question.answer );
-                return true;
+                console.log("given answer is "+question.answer )
+                return true
             } else {
-                return false;
+                return false
             }
             break;
         case 'number':
             let input = document.querySelector("#"+question.numberType)
             if (input.value != '' && input.value >= question.min && input.value <= question.max) {
                 question.answer = input.value;
-                console.log("given answer is "+question.answer );
-                return true;
+                console.log("given answer is "+question.answer)
+                return true
             } else {
-                return false;
+                return false
             }
             break;    
         default:
