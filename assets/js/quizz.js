@@ -2,6 +2,10 @@
 
 let radioValue = null
 
+// main result display
+
+const mainResult = document.querySelector('#mainResult')
+
 /* ====== start button ====== */
 
 const btnStart = document.querySelector('#btnStart')
@@ -448,57 +452,38 @@ function anlyseResults() {
     // remeber to deleted used to chek if data is available
 
     console.log(answers)
+
     // algo pour determiner la gravite :
+
       // Patient avec fièvre, ou toux + mal de gorge, ou toux + courbatures ou fièvre + diarrhée
       if(answers[1] === 'Oui' || (answers[3] === 'Oui' && answers[5] === 'Oui') || (answers[3] === 'Oui' && answers[4] === 'Oui') || (answers[1] === 'Oui' && answers[6] === 'Oui')){
         // Tout patient sans facteur pronostique
     
         if(pronoFactor == 0){
                 if(minorFactor == 0 && majorFactor == 0 && ( answers[11] < 50)){
-                    analysemsg[0].innerText = "nous vous conseillons de rester à votre domicile et de contacter votre médecin en " + 
+                    mainResult.innerText = "nous vous conseillons de rester à votre domicile et de contacter votre médecin en " + 
                     "cas d’apparition de nouveaux symptômes. Vous pourrez aussi utiliser à nouveau l’application pour réévaluer" +
                     "vos symptômes." 
-                    analysemsg[1].innerText = 'Restez chez vous au maximum en attendant que les symptômes disparaissent. Pren' +
-                    'ez votre température deux fois par jour. Rappel des mesures d’hygiène.'
-                    analysemsg[0].style.fontWeight = 'bold'
-                    analysemsg[0].style.color = '#369D53'
                 }
                 else if(minorFactor == 0 && majorFactor >= 1 && ( answers[11] > 50 && answers[11] < 69)){
-                    analysemsg[0].innerText = "téléconsultation ou médecin généraliste ou visite à domicile " +
+                    mainResult.innerText = "téléconsultation ou médecin généraliste ou visite à domicile " +
                     "appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent."  
-                    analysemsg[1].innerText = 'Restez chez vous au maximum en attendant que les symptômes disparaissent. Pren' +
-                    'ez votre température deux fois par jour. Rappel des mesures d’hygiène.'
-                    analysemsg[0].style.fontWeight = 'bold'
-                    analysemsg[0].style.color = '#369D53'
                 }
         }
     
         //Tout patient avec un facteur pronostique ou plus
         if(pronoFactor >= 1){
             if((minorFactor == 0 && majorFactor == 0) || minorFactor == 1){
-                analysemsg[0].innerText = "téléconsultation ou médecin généraliste ou visite à domicile " + 
+                mainResult.innerText = "téléconsultation ou médecin généraliste ou visite à domicile " + 
                 "appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent." 
-                analysemsg[1].innerText = 'Restez chez vous au maximum en attendant que les symptômes disparaissent. Pren' +
-                'ez votre température deux fois par jour. Rappel des mesures d’hygiène.'
-                analysemsg[0].style.fontWeight = 'bold'
-                analysemsg[0].style.color = '#369D53'
             }
             else if(minorFactor >= 2){
-                analysemsg[0].innerText = "appel 141" 
-                analysemsg[1].innerText = 'Restez chez vous au maximum en attendant que les symptômes disparaissent. Pren' +
-                'ez votre température deux fois par jour. Rappel des mesures d’hygiène.'
-                analysemsg[0].style.fontWeight = 'bold'
-                analysemsg[0].style.color = '#369D53'
-    
+                mainResult.innerText = "appel 141" 
             }
         }
         //Tout patient avec ou sans facteur pronostique avec au moins un facteur de gravité majeur
         if((pronoFactor>= 0) && majorFactor>=1 ){
-            analysemsg[0].innerText = "appel 141" 
-            analysemsg[1].innerText = 'Restez chez vous au maximum en attendant que les symptômes disparaissent. Pren' +
-            'ez votre température deux fois par jour. Rappel des mesures d’hygiène.'
-            analysemsg[0].style.fontWeight = 'bold'
-            analysemsg[0].style.color = '#369D53'
+            mainResult.innerText = "appel 141"
         }
      }
     
@@ -509,71 +494,39 @@ function anlyseResults() {
           //Tout patient sans facteur pronostique 
           if(pronoFactor == 0){
               if((minorFactor>= 0) && majorFactor == 0 ){
-                analysemsg[0].innerText = "téléconsultation ou médecin généraliste ou visite à domicile " + 
+                mainResult.innerText = "téléconsultation ou médecin généraliste ou visite à domicile " + 
                 "appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent." 
-                analysemsg[1].innerText = 'Restez chez vous au maximum en attendant que les symptômes disparaissent. Pren' +
-                'ez votre température deux fois par jour. Rappel des mesures d’hygiène.'
-                analysemsg[0].style.fontWeight = 'bold'
-                analysemsg[0].style.color = '#369D53'
               }
           }
           // Tout patient avec un facteur pronostique ou plus 
           if(pronoFactor >= 0){
               if((minorFactor == 0 || minorFactor == 1) && majorFactor == 0){
-                analysemsg[0].innerText = "téléconsultation ou médecin généraliste ou visite à domicile " + 
+                mainResult.innerText = "téléconsultation ou médecin généraliste ou visite à domicile " + 
                 "appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent." 
-                analysemsg[1].innerText = 'Restez chez vous au maximum en attendant que les symptômes disparaissent. Pren' +
-                'ez votre température deux fois par jour. Rappel des mesures d’hygiène.'
-                analysemsg[0].style.fontWeight = 'bold'
-                analysemsg[0].style.color = '#369D53'
               }
               if(minorFactor >= 2){
-                analysemsg[0].innerText = "appel 141" 
-                analysemsg[1].innerText = 'Restez chez vous au maximum en attendant que les symptômes disparaissent. Pren' +
-                'ez votre température deux fois par jour. Rappel des mesures d’hygiène.'
-                analysemsg[0].style.fontWeight = 'bold'
-                analysemsg[0].style.color = '#369D53'
+                mainResult.innerText = "appel 141" 
               }
           }
          // Tout patient avec ou sans facteur pronostique avec au moins un facteur de gravité majeur
           if((pronoFactor>= 0) && majorFactor>=1 ){
-            analysemsg[0].innerText = "appel 141" 
-            analysemsg[1].innerText = 'Restez chez vous au maximum en attendant que les symptômes disparaissent. Pren' +
-            'ez votre température deux fois par jour. Rappel des mesures d’hygiène.'
-            analysemsg[0].style.fontWeight = 'bold'
-            analysemsg[0].style.color = '#369D53'
+            mainResult.innerText = "appel 141" 
         }
       }
           // Tout patient avec un seul symptôme parmi fièvre, toux, mal de gorge, courbatures 
-          if(answers['i1'] === 'Oui' || answers['i3'] === 'Oui' || answers['i5'] === 'Oui' || answers['i4'] === 'Oui'){
+          if(answers[1] === 'Oui' || answers[3] === 'Oui' || answers[5] === 'Oui' || answers[4] === 'Oui'){
              if(majorFactor == 0 && minorFactor== 0){
-                 analysemsg[0].innerText = "Votre situation ne relève probablement pas du Covid-19. Consultez votre médecin au moindre doute" 
-                 analysemsg[1].innerText = 'Restez chez vous au maximum en attendant que les symptômes disparaissent. Pren' +
-                'ez votre température deux fois par jour. Rappel des mesures d’hygiène.'
-                 analysemsg[0].style.fontWeight = 'bold'
-                 analysemsg[0].style.color = '#369D53'
+                 mainResult.innerText = "Votre situation ne relève probablement pas du Covid-19. Consultez votre médecin au moindre doute" 
               }
              if((majorFactor == 1 || minorFactor == 1) || pronoFactor == 1){
-                 analysemsg[0].innerText = "Votre situation ne relève probablement pas du Covid-19. Un avis médical est recommandé. Au moindre doute, appelez le 141." 
-                analysemsg[1].innerText = 'Restez chez vous au maximum en attendant que les symptômes disparaissent. Pren' +
-                'ez votre température deux fois par jour. Rappel des mesures d’hygiène.'
-               analysemsg[0].style.fontWeight = 'bold'
-                 analysemsg[0].style.color = '#369D53'
+                 mainResult.innerText = "Votre situation ne relève probablement pas du Covid-19. Un avis médical est recommandé. Au moindre doute, appelez le 141." 
               }
           }
          // Tout patient avec aucun symptôme
-        if ((answers['i1'] === 'Non') && (answers['i3'] === 'Non') && (answers['i4'] === 'Non') && (answers['i5'] === 'Non') && (answers['i6'] === 'Non')){
-            analysemsg[0].innerText = 'Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à contacter votre médecin en cas de doute.' +
+        if ((answers[1] === 'Non') && (answers[3] === 'Non') && (answers[4] === 'Non') && (answers[5] === 'Non') && (answers[6] === 'Non')){
+            mainResult.innerText = 'Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à contacter votre médecin en cas de doute.' +
             'Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la situation.'+
             'Pour toute information concernant le Covid-19 allez vers la page d’accueil.'
-            analysemsg[1].innerText = 'Restez chez vous au maximum en attendant que les symptômes disparaissent. Pren' +
-            'ez votre température deux fois par jour. Rappel des mesures d’hygiène.'
-            analysemsg[0].style.fontWeight = 'bold'
-            analysemsg[0].style.color = '#369D53'
         }
-         console.log()
-
-
-
     
 }
