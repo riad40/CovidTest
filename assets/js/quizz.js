@@ -56,8 +56,8 @@ const questionTitle = document.querySelector('#title')
 // console.log(questionTitle)
 let compteur = 0
 questionTitle.innerText = questions[compteur].title
-generateForm(compteur)
-const switchBtns = document.querySelector('#switchingBtns') 
+const switchBtns = document.querySelector('#switchBtns') 
+console.log(switchBtns)
 switchBtns.classList.remove('btns')
 switchBtns.classList.add('btnsQ1')
 
