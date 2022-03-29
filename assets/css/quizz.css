@@ -99,7 +99,6 @@ html body{
   height: 200px;
 }
 .qs form{
-  margin-left:40px;
   height: 100px;
 }
 .qs .btns button{
@@ -210,6 +209,19 @@ html body{
 #fil {
   background-color: lightgray;
   padding: 5px 10px;
+}
+
+.radioStyle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.margin-left {
+  margin-left: 40px;
+}
+.margin-left-label {
+  margin-left: 10px;
 }
 
 /* ======== Qs : 11 to 15 ======== */
