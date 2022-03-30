@@ -321,7 +321,7 @@ function getAnswer(compteur) {
 
         case 'radio':
 
-            if(radioValue!=null){
+            if(radioValue != null){
                 question.answer = radioValue
                 answers.push(question.answer)
                 return true
@@ -386,7 +386,6 @@ function displayResult() {
 let majorFactor = 0 
 let minorFactor = 0
 let pronoFactor = 0
-let gravityFactor = 0
 
 function anlyseResults() {
 
@@ -502,7 +501,7 @@ function anlyseResults() {
 
         if(pronoFactor == 0){
             if((minorFactor >= 0) && majorFactor == 0 ){
-            mainResult.innerText = "téléconsultation ou médecin généraliste ou visite à domicile " + 
+                mainResult.innerText = "téléconsultation ou médecin généraliste ou visite à domicile " + 
             "appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent." 
             }
         }
@@ -539,7 +538,7 @@ function anlyseResults() {
     
     // Tout patient avec aucun symptôme
 
-    if ((answers[1] === 'Non') && (answers[3] === 'Non') && (answers[4] === 'Non') && (answers[5] === 'Non') && (answers[6] === 'Non')){
+    if((answers[1] === 'Non') && (answers[3] === 'Non') && (answers[4] === 'Non') && (answers[5] === 'Non') && (answers[6] === 'Non')){
         mainResult.innerText = 'Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à contacter votre médecin en cas de doute.' +
         'Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la situation.'+
         'Pour toute information concernant le Covid-19 allez vers la page d’accueil.'
